@@ -13,6 +13,13 @@ app.get('/', (req, res) => {
     rollbar.info("html file served successfully")
 })
 
+const students = []
+
+app.get('/randomendpoint', (req, res) => {
+    rollbar.info("this was a no endpoint function")
+    res.status(200).send(students)
+})
+
 var rollbar = new Rollbar({
   accessToken: 'e164af0e475940c3ba6ffbe83f1a780a',
   captureUncaught: true,
