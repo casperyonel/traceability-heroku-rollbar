@@ -10,7 +10,7 @@ const port = process.env.PORT || 8080
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/server.js'))
+    res.sendFile(path.join(__dirname, '/build/handouts/index.html'))
     rollbar.info("html file served successfully")
 })
 
