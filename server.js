@@ -8,14 +8,10 @@ app.use(express.json())
 
 const port = process.env.PORT || 8080
 
-
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/build/handouts/index.html'))
+    res.sendFile(path.join(__dirname, '/_build/handouts/index.html'))
     rollbar.info("html file served successfully")
 })
-
-
-// include and initialize the rollbar library with your access token
 
 var rollbar = new Rollbar({
   accessToken: 'e164af0e475940c3ba6ffbe83f1a780a',
@@ -25,8 +21,6 @@ var rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log("Hello world!");
-
-
 
 app.listen(port, () => {
     console.log(`Port is running on ${port}`)
