@@ -20,7 +20,7 @@ app.get('/randomendpoint', (req, res) => {
     try {
         thisFunctiondoesntExist()
     } catch (error) {
-        console.log(error)
+        rollbar.error(error)
     }
 })
 
