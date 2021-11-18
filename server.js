@@ -17,7 +17,11 @@ const students = []
 
 app.get('/randomendpoint', (req, res) => {
     rollbar.info("this was an error-based function")
-    res.status(200).send(students)
+    try {
+        thisFunctiondoesntExist()
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 var rollbar = new Rollbar({
