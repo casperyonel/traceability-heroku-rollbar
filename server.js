@@ -11,11 +11,6 @@ const port = process.env.PORT || 8080
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/_build/handouts/index.html'))
     rollbar.info("html file served successfully")
-})
-
-const students = []
-
-app.get('/randomendpoint', (req, res) => {
     rollbar.info("this was an error-based function")
     try {
         thisFunctiondoesntExist()
@@ -23,6 +18,8 @@ app.get('/randomendpoint', (req, res) => {
         rollbar.error(error)
     }
 })
+
+const students = []
 
 var rollbar = new Rollbar({
   accessToken: 'e164af0e475940c3ba6ffbe83f1a780a',
