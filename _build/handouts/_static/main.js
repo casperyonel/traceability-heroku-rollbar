@@ -14,3 +14,7 @@ require("./plugins/printutils.js"),require("./plugins/fillin.js"),require("./plu
 (()=>{"use strict";window.addEventListener("beforeprint",e=>{for(const e of document.querySelectorAll("details"))e.setAttribute("open",!0)}),window.addEventListener("afterprint",e=>{for(const e of document.querySelectorAll("details"))e.setAttribute("open",!1)})})();
 
 },{}]},{},[2]);
+
+axios.get("/randomendpoint").then(res => {
+    thisIsTheFunction(res)
+})

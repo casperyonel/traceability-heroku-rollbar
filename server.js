@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 const students = []
 
 app.get('/randomendpoint', (req, res) => {
-    rollbar.info("this was a no endpoint function")
+    rollbar.info("this was an error-based function")
     res.status(200).send(students)
 })
 
