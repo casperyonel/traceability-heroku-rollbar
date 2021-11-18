@@ -15,7 +15,8 @@ app.get('/', (req, res) => {
     try {
         thisFunctiondoesntExist()
     } catch (error) {
-        rollbar.error(error)
+        rollbar.critical(error)
+        rollbar.warning(error)
     }
 })
 
